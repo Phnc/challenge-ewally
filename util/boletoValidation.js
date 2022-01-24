@@ -1,6 +1,10 @@
 const banks = require('../data/banks.json');
 
 function getBankSlipInfo(digitableLine) {
+    if(!digitableLine.match(/^\d+$/)){
+        return "A linha digitavel so deve conter numeros";
+    }
+
     if (digitableLine.length != 47) {
         return "Linha Digitável Incorreta";
     }
